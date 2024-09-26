@@ -57,7 +57,7 @@ button{
 }
 
 button:hover{
-    background: rgba(90, 79, 79, 0.1);
+    background: rgba(51, 37, 37, 0.1);
 }
 
 #temp-div{
@@ -75,4 +75,22 @@ button:hover{
     margin: 0 auto 10px;
     margin-bottom: 0;
     display: none;
+}
+
+#hourly-forecast{
+    margin-top: 50px;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hourly-item{
+    float: 0 0 auto;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    color: #f6f6f6;
 }
