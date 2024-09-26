@@ -81,14 +81,3 @@ function displayHourlyForecast(hourlyData) {
     const iconCode = item.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
 
-    const hourlyItemHtml = `
-            <div class="hourly-item">
-                <span>${hour}:00</span>
-                <img src="${iconUrl}" alt="Hourly Weather Icon">
-                <span>${temperature}°C</span>
-            </div>
-        `;
-
-    hourlyForecastDiv.innerHTML += hourlyItemHtml;
-  });
-}
