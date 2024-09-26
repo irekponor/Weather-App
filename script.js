@@ -95,5 +95,5 @@ function displayHourlyForecast(hourlyData) {
 
 function showImage() {
   const weatherIcon = document.getElementById("weather-icon");
-  y = "block";
+  weatherIcon.style.display = "block";
 }
