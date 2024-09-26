@@ -1,9 +1,9 @@
 function getWeather() {
-  const apiKey = "5b9bb410feffebe339dce2482a4509ff";
-  const city = document.getElementbyId("city").value;
+  const apiKey = "YOUR-API-KEY";
+  const city = document.getElementById("city").value;
 
   if (!city) {
-    alert("please, enter a city");
+    alert("Please enter a city");
     return;
   }
 
@@ -17,7 +17,7 @@ function getWeather() {
     })
     .catch((error) => {
       console.error("Error fetching current weather data:", error);
-      alert("Error fetching current weather data. Try again.");
+      alert("Error fetching current weather data. Please try again.");
     });
 
   fetch(forecastUrl)
@@ -27,7 +27,7 @@ function getWeather() {
     })
     .catch((error) => {
       console.error("Error fetching hourly forecast data:", error);
-      alert("Error fetching hourly forecast data. Try again.");
+      alert("Error fetching hourly forecast data. Please try again.");
     });
 }
 
@@ -37,7 +37,7 @@ function displayWeather(data) {
   const weatherIcon = document.getElementById("weather-icon");
   const hourlyForecastDiv = document.getElementById("hourly-forecast");
 
-  // removing previous content
+  // Clear previous content
   weatherInfoDiv.innerHTML = "";
   hourlyForecastDiv.innerHTML = "";
   tempDivInfo.innerHTML = "";
@@ -46,19 +46,19 @@ function displayWeather(data) {
     weatherInfoDiv.innerHTML = `<p>${data.message}</p>`;
   } else {
     const cityName = data.name;
-    const temperature = Math.round(data.main.temp - 273.15);
+    const temperature = Math.round(data.main.temp - 273.15); // Convert to Celsius
     const description = data.weather[0].description;
     const iconCode = data.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
 
     const temperatureHTML = `
-        <p>${temperature}°C</p>
-    `;
+            <p>${temperature}°C</p>
+        `;
 
     const weatherHtml = `
-        <p>${cityName}</p>
-        <p>${description}</p>
-    `;
+            <p>${cityName}</p>
+            <p>${description}</p>
+        `;
 
     tempDivInfo.innerHTML = temperatureHTML;
     weatherInfoDiv.innerHTML = weatherHtml;
