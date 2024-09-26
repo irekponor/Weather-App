@@ -94,3 +94,14 @@ button:hover{
     margin-right: 10px;
     color: #f6f6f6;
 }
+
+.hourly-item img{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+#hourly-heading{
+    color: #f6f6f6;
+    margin-top: 10px;
+}
